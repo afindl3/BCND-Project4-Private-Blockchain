@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "04dfae4b-2fb7-484e-8706-e174b8fde158",
+		"name": "Udacity BCND Project 4 Private Blockchain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Private Blockchain",
+			"item": [
+				{
+					"name": "1. Get Block By Height",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/block/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"block",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Request Validation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"address\":\"14PtNYv1HQpxTDB4PwSD4c6vDNCe1c3sKX\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/requestValidation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"requestValidation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Submit Star",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"address\": \"14PtNYv1HQpxTDB4PwSD4c6vDNCe1c3sKX\",\n\t\"signature\": \"IP8zf/m9KoWx4nVVdzLapHEritz0T3oTqWx9pG37I87mDbO4KaLiDX6Igqbzk59QLc++jTwgXB4hpXqp4zNYh4g=\",\n\t\"message\": \"14PtNYv1HQpxTDB4PwSD4c6vDNCe1c3sKX:1590077468:starRegistry\",\n    \"star\": {\n        \"dec\": \"68° 52' 56.9\",\n        \"ra\": \"16h 29m 1.0s\",\n        \"story\": \"I found a  third star!\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/submitStar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"submitStar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Retrieve my Stars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/blocks/14PtNYv1HQpxTDB4PwSD4c6vDNCe1c3sKX",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"blocks",
+								"14PtNYv1HQpxTDB4PwSD4c6vDNCe1c3sKX"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
