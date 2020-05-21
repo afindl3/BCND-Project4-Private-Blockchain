@@ -42,7 +42,7 @@ class Block {
         // Save in auxiliary variable the current block hash
         const currentBlockHash = self.hash;
         // Recalculate the hash of the Block
-        const validBlockHash = SHA256(JSON.stringify(block).toString());
+        const validBlockHash = SHA256(JSON.stringify(self).toString());
         // Comparing if the hashes changed
         if (currentBlockHash != validBlockHash) {
           // Returning the Block is not valid

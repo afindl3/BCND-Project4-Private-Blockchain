@@ -185,7 +185,13 @@ class Blockchain {
     return new Promise(async (resolve, reject) => {
       let encodedStarsOwned = self.chain.filter(block => block.owner === address);
       if (encodedStarsOwned.length) {
-        const decodedStarsOwned = await Promise.all(encodedStarsOwned.map(async block => await block.getBData())); 
+        const decodedStarsOwned = await Promise.all(encodedStarsOwned.map(async block => {
+          const blockData = await block.getBData();
+          return {
+            ...blockData,
+            owner: block.owner
+          };
+        })); 
         resolve(decodedStarsOwned);
       } else {
         reject("No stars are owned by this address");
