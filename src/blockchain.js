@@ -213,7 +213,7 @@ class Blockchain {
       let previousHash = '';
 
       for (let i = 0; i < height; i++ ) {
-        const isValid = self.chain[i].validate();
+        const isValid = await self.chain[i].validate();
         if (!isValid) {
           errorLog.push(`Invalid block data (block hash does not match hash of block data), block: ${i}`);
         } else {
